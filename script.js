@@ -1,66 +1,58 @@
-// create an array to strore movie names
-// use an event listenrto add movie to array when the button is clicked
-// update the displayed list dynamically
-// prevent adding empty inputs
-// allow users to remove a moiovie whe they click on it
-// add a clear list button to mptyt the array
-// display the movie names and total numnber of movies added
+let movieList = [];
+let totalMovies = 0;
 
+const displayMovies = () => {
+    const movieListElement = document.getElementById("movielist");
+    movieListElement.innerHTML = ""; 
 
-let cnt = 0;
-const display=()=>{
+    movieList.forEach((movie, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = movie;
 
-    document.getElementById("movielist").innerHTML="";
-    movieList.forEach(movie=>{
-       
-        let mov = document.createElement("li");
-        let movBtn=document.createElement("button");
-        movBtn.textContent="Remove";
-        movBtn.id=cnt;
-        movBtn.class="remove";
-        mov.textContent = movie;
-        mov.append(movBtn);
-        document.getElementById("movielist").append(mov)
-    })
-}
-let movieList = ["Add a movie"];
-display()
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", () => removeMovie(index));
 
-const add=()=>{
-    let val = document.getElementById("addInp").value
-    if (val === "" || val === null) alert("Enter valid movie name");
-    else {
-        movieList[cnt] = val;
-       
- document.getElementById("addInp").value="";
-        display();
-        console.log(movieList);
-        console.log(cnt);
-        cnt++;
+        listItem.appendChild(removeButton);
+        movieListElement.appendChild(listItem);
+    });
+
+    document.getElementById("totalMovies").textContent = movieList.length;
+};
+
+const addMovie = () => {
+    const input = document.getElementById("addInp");
+    const movieName = input.value.trim();
+
+    if (movieName === "") {
+        alert("Please enter a valid movie name.");
+        return;
     }
-}
-const reset=()=>{
-    movieList=["Add a movie"];
-    display()
-}
+
+    movieList.push(movieName); 
+    input.value = ""; 
+    displayMovies(); 
+};
+
+
+const removeMovie = (index) => {
+    movieList.splice(index, 1); 
+    displayMovies(); 
+};
+
+const resetList = () => {
+    movieList = []; 
+    displayMovies(); 
+};
+
 document.getElementById("addBtn").addEventListener("click", (e) => {
-    e.preventDefault();
-   add();
-});
-document.getElementById("reset").addEventListener("click", (e) => {
-    e.preventDefault();
-   reset();
+    e.preventDefault(); 
+    addMovie();
 });
 
-let removeBtns=document.querySelectorAll(".remove");
-removeBtns.onclick=(e)=>{
-e.preventDefault();l
-console.log(e);
-// removeBtns.forEach(removeBtn=>{
-// removeBtn.onclick=(e)=>{
-//     e.preventDefault();
-//     let ind=parseInt(removeBtn.id);
-// movieList.slice(ind,ind+1);
-// }
-// });
-}
+document.getElementById("reset").addEventListener("click", (e) => {
+    e.preventDefault(); 
+    resetList();
+});
+
+displayMovies();
