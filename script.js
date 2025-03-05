@@ -1,6 +1,15 @@
 let movieList = [];
-let totalMovies = 0;
+//implemented afterwards
+const loadMoviesFromMemory = () => {
+    if (localStorage.getItem("movieList")) {
+        movieList = JSON.parse(localStorage.getItem("movieList"));
+    }
+};
 
+const saveMoviesToMemory = () => {
+    localStorage.setItem("movieList", JSON.stringify(movieList));
+};
+//till here
 const displayMovies = () => {
     const movieListElement = document.getElementById("movielist");
     movieListElement.innerHTML = ""; 
@@ -18,6 +27,7 @@ const displayMovies = () => {
     });
 
     document.getElementById("totalMovies").textContent = movieList.length;
+    saveMoviesToMemory();
 };
 
 const addMovie = () => {
@@ -33,7 +43,6 @@ const addMovie = () => {
     input.value = ""; 
     displayMovies(); 
 };
-
 
 const removeMovie = (index) => {
     movieList.splice(index, 1); 
@@ -55,4 +64,5 @@ document.getElementById("reset").addEventListener("click", (e) => {
     resetList();
 });
 
+loadMoviesFromMemory();
 displayMovies();
