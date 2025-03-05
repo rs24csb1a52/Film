@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body{
+    background-image: url('./image.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    justify-content:space-between;
+    height: 80vh;
+}
+#addInp{
+    margin: 10px;
+}
+.enter{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    justify-content:space-around;
+    
+}
+
+.inp{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    justify-content:space-around;
+}
+.movielist{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    justify-content:space-around;
+
+}
+.btnss{
+  height: 5vh;
+    display: flex;
+    align-items: center;
+
+    width: 40vw;
+    justify-content:space-around;
+
+}
+li{
+    
+    display: flex;
+    align-items: center;
+
+    width: 40vw;
+    justify-content:space-between;
+    background-color: rgba(0, 0, 0, 0.596);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button{
+    width: 40%;
+    height: 30px;
+    color: white;
+    background: #00000073;
+    border: none;
+    border-radius: 10px;
+}
+input{
+    width: 80%;
+    padding-left: 20px;
+    padding: 4px;
+   
+    height: 30px;
+    color: white;
+    background: #000000c9;
+    border: none;
+    border-radius: 10px;
+}
+input:focus{
+    width: 80%;
+    height: 30px;
+    color: white;
+    background: #000000c9;
+    border: none;
+    border-radius: 10px;
+}
