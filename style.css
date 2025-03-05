@@ -1,100 +1,95 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     color: white;
 }
 
-body{
+body {
     background-image: url('./image.png');
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px;
+    min-height: 100vh;
+    padding: 20px;
 }
-.content{
+
+.content {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 40vw;
-    justify-content:space-between;
-    height: 80vh;
+    width: 100%;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
 }
-#addInp{
-    margin: 10px;
+
+.enter {
+    width: 100%;
+    text-align: center;
 }
-.enter{
-    height: 15vh;
+
+.inp {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    width: 40vw;
-    justify-content:space-around;
-    
+    gap: 10px;
+    width: 100%;
 }
 
-.inp{
-    height: 25vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 40vw;
-    justify-content:space-around;
-}
-.movielist{
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 40vw;
-    justify-content:space-around;
-
-}
-.btnss{
-  height: 5vh;
-    display: flex;
-    align-items: center;
-
-    width: 40vw;
-    justify-content:space-around;
-
-}
-li{
-    
-    display: flex;
-    align-items: center;
-
-    width: 40vw;
-    justify-content:space-between;
-    background-color: rgba(0, 0, 0, 0.596);
-    margin: 10px;
+#addInp {
+    width: 100%;
     padding: 10px;
-    border-radius: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
-button{
-    width: 40%;
-    height: 30px;
-    color: white;
-    background: #00000073;
-    border: none;
-    border-radius: 10px;
+.btnss {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
-input{
-    width: 80%;
-    padding-left: 20px;
-    padding: 4px;
-   
-    height: 30px;
-    color: white;
-    background: #000000c9;
+
+button {
+    padding: 10px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
 }
-input:focus{
-    width: 80%;
-    height: 30px;
-    color: white;
-    background: #000000c9;
-    border: none;
-    border-radius: 10px;
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.movie-counter {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+#movielist {
+    width: 100%;
+    list-style-type: none;
+}
+
+#movielist li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+#movielist li button {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+#movielist li button:hover {
+    background: rgba(255, 0, 0, 0.7);
 }
