@@ -3,31 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sasta MyAnimeList</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- create a webapp users can add their favourite movies to a list , store and managethe data using array in js
-    input fiels to enter a movvis name 
-    add movie button
-    list to display added movies -->
     <div class="content">
         <form class="enter">
             <h1><label for="addInp">Sasta MyAnimeList</label></h1>
             <div class="inp">
-            <input type="text" name="addInp" id="addInp">
-            <div class="btnss">
-            <button id="addBtn">Add</button>
-            <button id="reset">Reset List</button>
-        </div>
-        </div>
+                <input type="text" name="addInp" id="addInp" placeholder="Enter a movie name">
+                <div class="btnss">
+                    <button id="addBtn">Add Movie</button>
+                    <button id="reset">Reset List</button>
+                </div>
+            </div>
         </form>
-      
-        <ol id="movielist">
-         
-        </ol>
+        <div class="movie-counter">Total Movies: <span id="totalMovies">0</span></div>
+        <ol id="movielist"></ol>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
